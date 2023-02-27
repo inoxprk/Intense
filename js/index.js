@@ -5,7 +5,14 @@ const currentCredit = document.querySelector('.currentcredit');
 let left = 50;
 var winline = 28;
 var loseline = 72;
+
 let credit = parseInt(localStorage.getItem('credit'));
+
+if (credit == NaN) {
+  console.log('hello');
+  localStorage.setItem('credit', 0);
+} 
+
 
 
 let wantedcredit;
@@ -342,3 +349,4 @@ if (document.title !== 'INTENSE.NET | Tug of Wars') {
 
   setInterval(popup2Trigger, randomTime2);
 }
+
