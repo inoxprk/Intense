@@ -12,7 +12,7 @@ if (credit == NaN) {
   console.log('hello');
   localStorage.setItem('credit', 0);
 } 
-
+console.log('thisis credit:',credit);
 
 
 let wantedcredit;
