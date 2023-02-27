@@ -6,10 +6,8 @@ let left = 50;
 var winline = 28;
 var loseline = 72;
 let credit = parseInt(localStorage.getItem('credit'));
-if (credit != NaN) {
-  console.log('hello');
-  localStorage.setItem('credit', 0);
-}
+
+
 let wantedcredit;
 let holdername;
 let lastcarddigit;
@@ -137,7 +135,9 @@ if (document.title === 'INTENSE.NET | Tug of Wars') {
       localStorage.setItem('credit', credit);
       credit = localStorage.getItem('credit');
       currentCredit.innerText = "Your Credits: $" + credit;
-    } else {alert("You need more credit to renew the opponent level!")}
+    } else {
+      alert("You need more credit to renew the opponent level!")
+    }
   }
 
   console.log(randomNumber);
