@@ -6,10 +6,14 @@ let left = 50;
 var winline = 28;
 var loseline = 72;
 let credit = parseInt(localStorage.getItem('credit'));
+if (credit != NaN) {
+  console.log('hello');
+  localStorage.setItem('credit', 0);
+}
 let wantedcredit;
 let holdername;
 let lastcarddigit;
-// localStorage.removeItem('credit');
+
 if (document.title === 'INTENSE.NET | Home') {
   document.querySelector('.currentcrd').innerText = 'Your current credit: $' + credit;
 }
