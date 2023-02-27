@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./js/index.js" defer></script>
+  <link rel="stylesheet" href="./css/tugowar.css">
+  <title>INTENSE.NET | Tug of Wars</title>
+</head>
+
+<body>
+  <div class="instruction">
+    <div class="instructiontext">
+      <h2>How to Play</h2>
+      <p>Welcome to Intense Tug of War!</p>
+      <p>Hit the space bar as fast as you can to pull the rope. You need at least <a href="./addcredits.html"
+          target="_parent">$30 credits</a> to play.</p>
+      <button onclick="hideInstructions()">Continue</button>
+    </div>
+  </div>
+  <div class="bar_container">
+    <div class="bar">
+      <div class="line"></div>
+      <div class="pullingman">
+        <img src="./img/pull2.png" alt="">
+        <img class="default" src="./img/pull1.png" alt="">
+      </div>
+      <div class="pullingcomputer">
+        <img src="./img/computer.png" alt="">
+        <div class="rotatebartop"></div>
+        <div class="rotatebarbottom"></div>
+      </div>
+      <div class="leftfinish"></div>
+      <div class="position"></div>
+      <div class="rightfinish"></div>
+    </div>
+    <div class="btnwrap">
+      <div class="button3d"></div>
+      <button class="key_button">Hit Space to Start Pulling</button>
+    </div>
+  </div>
+  <a id="howtoplay" href="">How to Play</a>
+
+  <div class="credits">
+    <p class="currentcredit"></p>
+    <a href="./addcredits.html" target="_parent">Add Credits</a>
+  </div>
+  <div class="levels">
+    <p class="itsLevel">Opponent Level: 2</p>
+    <button onclick="levelGen()">Renew Opponent Level (-$10)</button>
+    <p>Warning: Renewed Level is Random!</p>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,603 @@
+@import url('https://fonts.googleapis.com/css2?family=Finlandica:wght@500&family=Kantumruy+Pro:wght@400;500;700&family=Koulen&display=swap');
+
+body {
+  padding:0;
+  margin:0;
+  background-image: url("../img/pattern.png");
+  background-size: 970%;
+  background-position: 0 0;
+  animation: bgmove 90s infinite linear;  
+}
+
+.anotherbackground {
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../img/pattern.png");
+  background-size: 300%;
+  background-position: 0 0;
+  animation: bgmove 90s infinite linear reverse;
+  mix-blend-mode: difference;
+  background-attachment: fixed;
+}
+
+@keyframes bgmove{
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+    
+  }
+}
+
+.shake {
+  animation: shake 0.1s;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
+}
+
+.popupads {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+  display: flex;
+  flex-flow: row-reverse wrap-reverse;
+}
+
+.popupads .imgwrap {
+  position: relative;
+  display: none;
+  cursor:pointer;
+}
+
+.imgwrap .xicon {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top:0;
+  right:0;
+  background-image: url("../img/xicon.png");
+  background-repeat: no-repeat;
+  cursor:pointer;
+}
+
+.popupads2 {
+  display: none;
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background-color: rgba(0,0,0, 0.5);
+  z-index: 99999;
+}
+
+.popupads2 .imgwrap {
+  position: absolute;
+  display: none;
+  width: 30%;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+}
+
+.popupads2 .imgwrap img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.border {
+  box-sizing: border-box;
+	position: relative;
+  padding:5px;
+	background-repeat: no-repeat;
+
+	background-size: calc(100%) 6px,
+		/* top & bottom */ 6px calc(100%); /* right & left */
+
+	background-position: 0px 0px, /* top */ calc(100%) 5px,
+		/* right */ 5px calc(100%), /* bottom */ 0px 5px; /* left */
+
+	background-image: linear-gradient(
+			115deg,
+			#10cf40,
+			#f8ce25,
+			#800ff0,
+			#0ea2dd,
+			#44ce7b
+		),
+		linear-gradient(115deg, #10cf40, #44ce7b),
+		linear-gradient(115deg, #10cf40, #f8ce25, #800ff0, #0ea2dd, #44ce7b),
+		linear-gradient(115deg, #10cf40, #44ce7b);
+
+	animation: level-item 0.4s linear infinite;
+}
+
+@keyframes level-item {
+	0%,
+	100% {
+		background-image: linear-gradient(
+				115deg,
+				#10cf40,
+				#f8ce25,
+				#800ff0,
+				#0ea2dd
+			),
+			linear-gradient(115deg, #0ea2dd, #0ea2dd),
+			linear-gradient(115deg, #10cf40, #f8ce25, #800ff0, #0ea2dd),
+			linear-gradient(115deg, #10cf40, #44ce7b);
+	}
+
+	25% {
+		background-image: linear-gradient(
+				115deg,
+				#f8ce25,
+				#800ff0,
+				#0ea2dd,
+				#10cf40
+			),
+			linear-gradient(115deg, #10cf40, #10cf40),
+			linear-gradient(115deg, #f8ce25, #800ff0, #0ea2dd, #10cf40),
+			linear-gradient(115deg, #f8ce25, #f8ce25);
+	}
+
+	50% {
+		background-image: linear-gradient(
+				115deg,
+				#800ff0,
+				#0ea2dd,
+				#10cf40,
+				#f8ce25
+			),
+			linear-gradient(115deg, #f8ce25, #f8ce25),
+			linear-gradient(115deg, #800ff0, #0ea2dd, #10cf40, #f8ce25),
+			linear-gradient(115deg, #800ff0, #800ff0);
+	}
+
+	75% {
+		background-image: linear-gradient(
+				115deg,
+				#0ea2dd,
+				#10cf40,
+				#f8ce25,
+				#800ff0
+			),
+			linear-gradient(115deg, #800ff0, #800ff0),
+			linear-gradient(115deg, #0ea2dd, #10cf40, #f8ce25, #800ff0),
+			linear-gradient(115deg, #0ea2dd, #0ea2dd);
+	}
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.adv {
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: #fff;
+  overflow: scroll;
+}
+
+.adv.row {
+  height: 200px;
+  /* display: flex;
+  flex-wrap: nowrap; */
+  white-space: nowrap;
+  position:relative;
+}
+
+.adv.row .marquee-row {
+  position:absolute;
+  display: inline-block;
+  height: 100%;
+  white-space: nowrap;
+  /* display: flex;
+  position: absolute;
+  top:0;
+  bottom:0;
+  float:left; */
+}
+
+.adv.column {
+  width: 18.4%;
+  height: 730px;
+  background-color: black;
+}
+
+.adv .imgwrap {
+  display: inline-block;
+  height: 100%;
+}
+.adv .imgwrap img {
+  object-fit: contain;
+  height: 100%;
+}
+.adv.left {
+  float:left;
+}
+
+.adv.right {
+  float: left;
+}
+.adv.right .imgwrap, .adv.left .imgwrap {
+  height: auto;
+  width: 100%;
+}
+.adv.right .imgwrap img, .adv.left .imgwrap img {
+  object-fit: contain;
+  height: auto;
+  width: 100%;
+}
+.content {
+  margin: 8px 1.6%;
+  float: left;
+  width: 60%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.content header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 124px;
+  margin-bottom:16px;
+  background-color: #fff;
+  padding: 0 40px;
+}
+
+.content header a:hover {
+  animation: shake .3s linear infinite;
+}
+
+.content header img {
+  width: 250px;
+  margin-top:8px;
+}
+
+.content header nav ul {
+  list-style: none;
+}
+.content header nav ul li {
+  display: inline-block;
+  margin-left:16px;
+}
+.content header nav ul li a{
+  /* text-decoration: none; */
+  color:black;
+  font-size:20px;
+  font-family: sans-serif;
+}
+.content .gamespace {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+}
+
+.content .gamespace .controlbar {
+  position: absolute;
+  top:0;
+  padding:5px;
+  z-index: 99;
+  display: flex;
+  width: 100%;
+}
+
+.content .gamespace .controlbar.second {
+  top:16px;
+}
+
+.content .gamespace .controlbar.second div {
+background-image: linear-gradient(
+			115deg,
+			#10cf40,
+			#f8ce25,
+			#800ff0,
+			#0ea2dd,
+			#44ce7b
+		),
+		linear-gradient(115deg, #10cf40, #44ce7b),
+		linear-gradient(115deg, #10cf40, #f8ce25, #800ff0, #0ea2dd, #44ce7b),
+		linear-gradient(115deg, #10cf40, #44ce7b);
+
+	animation: level-item 0.4s linear infinite;
+}
+
+.content .gamespace .controlbar div {
+  height: 80px;
+  background-color:#fff;
+}
+.content .gamespace .controlbar div .games {
+  background-color: transparent;
+}
+.content .gamespace .controlbar .leftblock {
+  width: 100px;
+  clip-path: polygon(100% 100%, 73% 60%, 0 60%, 0% 0%, 100% 0%);
+}
+
+.content .gamespace .controlbar .middleblock {
+  width: calc(100% - 210px);
+}
+
+.content .gamespace .controlbar .rightblock {
+  width: 100px;
+  clip-path: polygon(100% 60%, 27% 60%, 0 100%, 0% 0%, 100% 0%);
+}
+
+.content iframe {
+  height: 500px;
+  width: 100%;
+  background-color: #fff;
+}
+
+.gamespace .textwrap {
+  animation: shake .1s infinite;
+}
+
+.gamespace .textwrap h1 {
+  position: absolute;
+  margin:80px auto;
+  left:0;
+  right:0;
+  color:#fff;
+  font-family: 'Koulen', cursive;
+  font-size: 80px;
+  line-height: 80px;
+  text-align: center;
+  animation: textsize 1s ease-in-out infinite alternate;
+}
+
+@keyframes textsize {
+  0% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1.6);
+  }
+}
+
+.content .games {
+  position: absolute;
+  bottom:80px;
+  left:0;
+  right:0;
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  margin:0 auto; 
+}
+
+.content .games.menu {
+  bottom:auto;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+} 
+
+.content .background1 {
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/homebg.png");
+  background-size: cover;
+}
+.content .background1 .home.currentcrd {
+  margin:0;
+  color:white;
+  position: absolute;
+  bottom: 50px;
+  font-family: sans-serif;
+  left:0;
+  right:0;
+  text-align: center;
+}
+
+.content .background2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/addcrdbg.png");
+  background-size: cover;
+}
+
+.content .payment {
+  position: absolute;
+  top: 110px;
+  left:0;
+  right:0;
+  margin: 0 auto;
+  width: 270px;
+  padding:20px;
+  background-color: #fff;
+  font-family: sans-serif;
+}
+
+.content .confirmationalert {
+  display: none;
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.7);
+}
+.content .confirmationalert .notice {
+  margin:150px auto;
+  width: 300px;
+  height: 200px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  gap:16px;
+  align-items: center;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+.content .confirmationalert .notice a {
+  width: 150px;
+  background-color: #fff;
+  border: 2px solid black;
+  padding: 10px 0;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color:black;
+}
+
+.content .payment.cardinfo {
+  display: none;
+}
+
+.content .payment.confirmation {
+  display: none;
+}
+
+.content .payment.confirmation h3{
+  text-align: center;
+}
+
+.content .payment.confirmation p {
+  color:gray;
+  margin: 6px 0;
+}
+
+.content .payment.confirmation .cardnumber, 
+.content .payment.confirmation .holdername, 
+.content .payment.confirmation .amountdue {
+  color:black;
+  font-weight: bold;
+}
+
+.content .payment.confirmation .cardnumber {
+  margin-top: 10px;
+}
+.content .payment.confirmation .holdername {
+  margin-bottom:20px;
+}
+.content .payment.confirmation .amountdue {
+  text-align: center;
+  font-size: 50px;
+  margin:16px 0 20px;
+}
+
+.content .payment.creditamount button {
+  margin-top:16px;
+}
+
+.content .payment form {
+  display: flex;
+  flex-direction: column;
+}
+.content .payment form input {
+  margin-top:6px;
+}
+.content .payment button {
+  width: 150px;
+  background-color: #fff;
+  border: 2px solid black;
+  padding: 10px 0;
+  margin: 0 auto;
+  display: block;
+}
+
+.content .games.menu a {
+  padding: 10px;
+  height: 20px;
+  font-size: 20px;
+}
+.content .games.menu a:hover {
+  font-size:20px;
+}
+
+.content .games a {
+  text-decoration: none;
+  border-radius:10px;
+  border:4px solid black;
+  padding:30px 40px;
+  background-color: blue;
+  color:#fff;
+  font-size:24px;
+  font-family: sans-serif;
+}
+.content .games a:hover {
+  color: red;
+  font-size: 26px;
+  font-weight: 700;
+	background-image: linear-gradient(
+			115deg,
+			#10cf40,
+			#f8ce25,
+			#800ff0,
+			#0ea2dd,
+			#44ce7b
+		),
+		linear-gradient(115deg, #10cf40, #44ce7b),
+		linear-gradient(115deg, #10cf40, #f8ce25, #800ff0, #0ea2dd, #44ce7b),
+		linear-gradient(115deg, #10cf40, #44ce7b);
+
+	animation: level-item 0.4s linear infinite, shake .3s;}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+
+
+/* marquee animation */
+
+.marquee-row.marquee-left {
+  animation: marqueeLeft 16s linear infinite;
+}
+.marquee-row.marquee-right {
+  /* left:1480px; */
+  animation: marqueeRight 16s linear infinite;
+}
+.marquee-row.marquee-rightdelay {
+  background-color: orange;
+  animation: marqueeRight 16s linear infinite;
+  left:1480px;
+  animation-delay: 8s;
+}
+@keyframes marqueeLeft{
+  0% {
+    left: 0;
+  }
+  100% {
+    left:-2960px;
+  }
+}
+@keyframes marqueeRight{
+  0% {
+    left:1480px;
+  }
+  50% {
+    left: 0;
+  }
+  100% {
+    left:-1480px;
+  }
+}
+

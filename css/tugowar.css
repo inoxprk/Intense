@@ -1,0 +1,312 @@
+.instruction {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .7);
+  top: 0;
+  left: 0;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.instructiontext {
+  width: 300px;
+  height: 230px;
+  background-color: #fff;
+  margin-top: 10px;
+  border: 2px solid black;
+}
+
+.instructiontext h2 {
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.instructiontext p {
+  padding: 0 20px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.instructiontext button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 30px;
+  background-color: #fff;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 24px;
+}
+
+.instructiontext button:hover {
+  background-color: rgb(215, 215, 215);
+}
+
+.bar_container {
+  margin-top: 40vh;
+  display: flex;
+  flex-direction: column;
+  gap: 75px;
+  align-items: center;
+}
+
+.bar {
+  width: 100vw;
+  height: 3px;
+  position: relative;
+  margin-top: 22px;
+}
+
+.bar .line {
+  width: 100vw;
+  height: 3px;
+  background-color: #333;
+}
+
+.bar .pullingman {
+  position: absolute;
+  width: 50px;
+  top: -40px;
+  left: 60px;
+}
+
+.bar .pullingman img {
+  width: 100%;
+  position: absolute;
+  animation: shake .1s;
+}
+
+.bar .pullingman .hide {
+  display: none;
+}
+
+.bar .pullingcomputer {
+  position: absolute;
+  width: 75px;
+  top: -37px;
+  right: 60px;
+}
+
+.bar .pullingcomputer img {
+  width: 100%;
+  position: absolute;
+}
+
+
+.bar .pullingcomputer .rotatebartop {
+  position: absolute;
+  top: 26px;
+  left: 11px;
+  height: 3px;
+  width: 20px;
+  background-color: black;
+}
+
+.bar .pullingcomputer .rotatebarbottom {
+  position: absolute;
+  top: 49px;
+  left: 11px;
+  height: 3px;
+  width: 20px;
+  background-color: black;
+}
+
+.clockwise {  animation: rotateclockwise 2s linear infinite;}
+.counterclockwise {  animation: rotatecounterclockwise 2s linear infinite;}
+
+@keyframes rotateclockwise {
+  0% {transform: rotate(0);}
+  100% {transform: rotate(360deg);}
+}
+@keyframes rotatecounterclockwise {
+  0% {transform: rotate(0);}
+  100% {transform: rotate(-360deg);}
+}
+.bar .position {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  -webkit-clip-path: polygon(50% 100%, 0 0, 100% 0);
+  background-color: #333;
+  top: -28px;
+  transform: translateX(-50%);
+  left: 50%;
+  /* The left value will be changed based on the game result */
+  transition: left .2s;
+  animation: updown .5s ease-in-out infinite alternate;
+}
+
+@keyframes updown {
+  0% {
+    top: -28px
+  }
+
+  100% {
+    top: -36px;
+  }
+}
+
+.bar .leftfinish {
+  position: absolute;
+  width: 3px;
+  height: 40px;
+  background-color: #333;
+  top: -18px;
+  transform: translateX(-50%);
+  left: 30%;
+}
+
+.bar .rightfinish {
+  position: absolute;
+  width: 3px;
+  height: 40px;
+  background-color: #333;
+  top: -18px;
+  transform: translateX(-50%);
+  left: 70%;
+}
+
+.levels {
+  font-family: sans-serif;
+  position: absolute;
+  right:10px;
+  bottom:10px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 8px 0;
+  border:2px solid black;
+}
+
+.levels .itsLevel {
+  font-size:20px;
+  margin:0;
+}
+
+.levels p {
+  margin-top: 4px;
+  font-size: 12px;
+}
+.levels button {
+  margin-top:8px;
+}
+
+/* spacebar design */
+.btnwrap {
+  position: relative;
+  width: 400px;
+  height: 70px;
+}
+
+.btnwrap div,
+.btnwrap button {
+  border-radius: 10px;
+}
+
+.key_button {
+  position: absolute;
+  top: -8px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border: 3px solid #333;
+  text-align: center;
+  padding: 16px 0;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  height: 100%;
+}
+
+.key_button.active {
+  top: 0;
+}
+
+.button3d {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #333;
+}
+
+#howtoplay {
+  display: block;
+  text-align: center;
+  width: 90px;
+  margin: 20px auto 0;
+  color:black;
+  font-family: sans-serif;
+}
+
+.shake {
+  animation: shake 0.3s linear infinite;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
+}
+
+.credits {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding:10px 10px 10px 20px;
+  width: 170px;
+  border:2px solid;
+  margin-top:10px;
+}
+.credits p {
+  margin: 0;
+  font-size: 20px;
+}
+@keyframes shake {
+  0% {
+    transform: translate(0, 1px)
+  }
+
+  10% {
+    transform: translate(0, -2px)
+  }
+
+  20% {
+    transform: translate(0, 0px)
+  }
+
+  30% {
+    transform: translate(0, 2px)
+  }
+
+  40% {
+    transform: translate(0, -1px)
+  }
+
+  50% {
+    transform: translate(0, 2px)
+  }
+
+  60% {
+    transform: translate(0, 1px)
+  }
+
+  70% {
+    transform: translate(0, 1px)
+  }
+
+  80% {
+    transform: translate(0, -1px)
+  }
+
+  90% {
+    transform: translate(0, 2px)
+  }
+
+  100% {
+    transform: translate(0, -2px)
+  }
+}
