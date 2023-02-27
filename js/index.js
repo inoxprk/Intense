@@ -8,7 +8,7 @@ var loseline = 72;
 
 let credit = parseInt(localStorage.getItem('credit'));
 
-if (credit == NaN) {
+if (isNaN(credit)) {
   console.log('hello');
   localStorage.setItem('credit', 0);
 } 
